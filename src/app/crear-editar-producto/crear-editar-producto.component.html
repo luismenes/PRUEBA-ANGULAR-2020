@@ -1,0 +1,86 @@
+<h4 class="dispaly-4 badge-dark text-center">
+
+
+    DATOS BASICOS</h4>
+<hr>
+
+<form (ngSubmit)="onSubmit(f)" #f="ngForm" autocomplete="off">
+
+
+    <div class=" form-row">
+
+
+        <div class="col-md-6">
+
+            <div class="form-group">
+
+                <div class="input-group">
+
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">CODIGO</div>
+                    </div>
+                    <input name="CODIGO" required CODIGO required [(ngModel)]="formData.CODIGO" type="number" class="form-control">
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="col-md-6">
+
+            <div class="form-group">
+
+                <div class="input-group">
+
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">REF</div>
+                    </div>
+                    <input name="REFERENCIA" required [(ngModel)]="formData.REFERENCIA" type="number" class="form-control">
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col-md-6">
+
+            <div class="box-body">
+                <div class="form-group">
+
+
+                    <label>NOMBRE</label>
+                    <input name="NOMBRE" required [(ngModel)]="formData.NOMBRE" class="form-control">
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="col-md-6">
+
+            <div class="box-body">
+                <div class="form-group">
+
+                    <label>SEDE BODEGA</label>
+                    <input name="SEDE_BODEGA" required [(ngModel)]="formData.SEDE_BODEGA" class="form-control">
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col-md-12">
+
+            <div class="form-group">
+                <label>DESCRIPCION</label>
+                <textarea class="form-control" name="DESCRIPCION" [(ngModel)]="formData.DESCRIPCION" rows="3"></textarea>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="form-group">
+        <button type="submit" class="btn btn-success"><i class="fa fa-database"></i> Submit</button>
+        <button type="button" class="btn btn-outline-danger ml-1" [mat-dialog-close]><i class="fa fa-close"></i> Close</button>
+    </div>
+</form>

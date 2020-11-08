@@ -1,0 +1,32 @@
+<div class="form-lg-rg mt-5">
+
+    <form (ngSubmit)="login(f)" #f="ngForm" class="form-group">
+
+        <h2><label class="text-center ml-5"> Login </label> </h2>
+        <br>
+
+        <span *ngIf="f.submitted && f.controls['email'].errors" class="text-danger mb-3 animated fadeIn">El correo es obligatorio</span>
+        <div class="form-group">
+
+            <input type="email" email name="email" class="form-control" [(ngModel)]="usuario.email" required type="email" placeholder="Email de usuario">
+        </div>
+
+        <span *ngIf="f.submitted && f.controls['password'].errors" class="text-danger mb-3 animated fadeIn">Contraseña obligatoria</span>
+        <div class="form-group">
+            <input type="password" name="password" class="form-control" [(ngModel)]="usuario.password" required minlength="5" placeholder="Password">
+        </div>
+
+        <div class="form-group form-check">
+            <input [(ngModel)]="recordarme" name="checkbox" type="checkbox" class="form-check-input">
+            <small> <label>Recordar usuario</label> </small>
+        </div>
+
+        <button class="btn btn-primary" type="submit">
+                Entrar
+        </button>
+
+
+    </form>
+
+
+</div>

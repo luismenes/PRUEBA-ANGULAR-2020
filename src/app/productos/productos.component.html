@@ -1,0 +1,65 @@
+<form class="form-group">
+    <div class="row">
+
+        <div class="col-md-12">
+            <br>
+            <br>
+
+            <!-- tabla -->
+
+
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+
+                        <th scope="col">ID</th>
+                        <th scope="col">CODIGO</th>
+                        <th scope="col">NOMBRE</th>
+                        <th scope="col">DESCRIPCION</th>
+                        <th scope="col">REFERENCIA</th>
+                        <th scope="col">UBICACION</th>
+                        <th scope="col">DESCRIPCION</th>
+                        <th>
+                            <a class="btn btn-sm btn-success text-white" (click)="editarRegistro(null,service.formaDatos.ID)"><i class="fa fa-plus"></i> Nuevo Registro</a>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr *ngIf="service.orderItems.length === 0">
+                        <td class="font-italic text-center" colspan="10">
+                            <div class="alert alert-warning text-center m-3 animated fadeIn faster ">
+                                <h4 class="alert-heading ">No hay registros</h4>
+                                <p>
+                                    <i class="fas fa-exclamation fa-2x "></i>
+                                </p>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr *ngFor="let item of service.orderItems; let i=index">
+                        <td> {{ item.ID }} </td>
+                        <td> {{ item.CODIGO }} </td>
+                        <td> {{ item.NOMBRE }} </td>
+                        <td> {{ item.DESCRIPCION }} </td>
+                        <td> {{ item.REFERENCIA }}</td>
+                        <td> {{ item.UBICACION }} </td>
+                        <td> {{ item.DESCRIPCION }} </td>
+                        <td>
+                            <a class="btn btn-sm btn-info text-white" (click)="editarRegistro()"><i class="fa fa-pencil"></i></a>
+                            <a class="btn btn-sm btn-danger text-white ml-1" (click)="deleDato()"><i class="fa fa-trash"></i></a>
+                        </td>
+                    </tr>
+
+
+                </tbody>
+            </table>
+
+            <div class="form-group">
+                <!-- <button type="submit" class="btn btn-dark" ><i class="fa fa-database"></i> Submit</button> -->
+                <a class="btn btn btn-outline-warning" (click)="guardar()"><i class="fa fa-database"></i>Guardar</a>
+                <!-- <a class="btn btn-outline-dark ml-1" routerLink=""><i class="fa fa-table"></i> View Orders</a> -->
+            </div>
+        </div>
+    </div>
+</form>
